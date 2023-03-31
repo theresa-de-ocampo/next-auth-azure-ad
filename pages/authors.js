@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import { signOut } from 'next-auth/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -53,7 +54,7 @@ export default function Authors() {
           </p>
         </a>
 
-        <button className={styles.card}>
+        <button className={styles.card} onClick={() => signOut()}>
           <h2 className={inter.className}>
             Sign Out <span>-&gt;</span>
           </h2>
